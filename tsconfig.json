@@ -9,7 +9,7 @@
     "strict": true,
     "target": "es2017",
     "baseUrl": "./",
-    "outDir": "./dist",
+    "outDir": "./dist/",
     "declaration": true,
     "declarationDir": "./dist"
   },
