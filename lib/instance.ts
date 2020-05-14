@@ -45,7 +45,7 @@ class MockInstance {
     return `${this.params.authServerURL}${path}`;
   }
 
-  createBearerToken(sub: string, expiresIn: number = 3600): string {
+  createBearerToken(sub: string, expiresIn: number = 3600, otherAttributes: any = {}): string {
     const user = this.database.findUserByID(sub);
     if (!user) {
       throw new Error("Cannot create bearer token for non-existent user");
@@ -58,7 +58,7 @@ class MockInstance {
       realm: this.params.realm,
       clientID: this.params.clientID,
       authServerURL: this.params.authServerURL,
-    });
+    },otherAttributes);
   }
 }
 
