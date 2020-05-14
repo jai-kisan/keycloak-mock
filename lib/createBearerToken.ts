@@ -14,7 +14,7 @@ export interface CreateTokenOptions {
   authServerURL: string;
 }
 
-const createBearerToken = (options: CreateTokenOptions): string => {
+const createBearerToken = (options: CreateTokenOptions, otherAttributes: [key:string]: any = {}): string => {
   const timestamp = Math.floor(Date.now() / 1000);
   const expiresAt = timestamp + options.expiresIn;
 
@@ -28,6 +28,7 @@ const createBearerToken = (options: CreateTokenOptions): string => {
       sub: options.user.profile.id,
       azp: options.clientID,
       session_state: uuidv4(),
+      ...otherAttributes,
     },
     options.key.toPEM(true),
     {
