@@ -4,6 +4,7 @@
   "description": "Keycloak server mock for Node.js",
   "repository": "https://github.com/SectorLabs/keycloak-mock",
   "author": "Sector Labs <open-source@sectorlabs.ro>",
+  "main": "dist/index.js",
   "license": "MIT",
   "engines": {
     "node": ">=8.0.0"
