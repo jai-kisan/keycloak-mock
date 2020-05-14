@@ -14,7 +14,7 @@ export interface CreateTokenOptions {
   authServerURL: string;
 }
 
-const createBearerToken = (options: CreateTokenOptions, otherAttributes: [key:string]: any = {}): string => {
+const createBearerToken = (options: CreateTokenOptions, otherAttributes: any = {}): string => {
   const timestamp = Math.floor(Date.now() / 1000);
   const expiresAt = timestamp + options.expiresIn;
 
