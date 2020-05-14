@@ -9,7 +9,9 @@
     "strict": true,
     "target": "es2017",
     "declaration": true,
-    "declarationDir": "./dist"
+    "declarationDir": "./dist",
+    "baseUrl": "./",
+    "outDir": "./dist",
   },
   "exclude": ["./dist"],
   "include": ["./lib/*"]
