@@ -12,6 +12,7 @@ export interface CreateTokenOptions {
   realm: string;
   clientID: string;
   authServerURL: string;
+  audience?: string | string[];
 }
 
 const createBearerToken = (options: CreateTokenOptions, otherAttributes: [key:string]: any = {}): string => {
@@ -37,6 +38,7 @@ const createBearerToken = (options: CreateTokenOptions, otherAttributes: [key:st
         typ: "JWT",
         kid: options.key.kid,
       },
+      ...(options.audience && { audience: options.audience }),
     }
   );
 };
