@@ -15,7 +15,7 @@ export interface CreateTokenOptions {
   audience?: string | string[];
 }
 
-const createBearerToken = (options: CreateTokenOptions, otherAttributes: [key:string]: any = {}): string => {
+const createBearerToken = (options: CreateTokenOptions, otherAttributes: {[key:string]: any} = {}): string => {
   const timestamp = Math.floor(Date.now() / 1000);
   const expiresAt = timestamp + options.expiresIn;
 
